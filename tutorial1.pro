@@ -17,11 +17,20 @@ SOURCES += main.cpp \
     enemy.cpp \
     game.cpp \
     player.cpp \
-    score.cpp
+    score.cpp \
+    enemy2.cpp \
+    mytimer.cpp
 
 HEADERS  += \
     bullet.h \
     enemy.h \
     game.h \
     player.h \
-    score.h
+    score.h \
+    enemy2.h \
+    mytimer.h
+
+RESOURCES += \
+    res.qrc
+
+FORMS +=

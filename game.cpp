@@ -1,27 +1,39 @@
 #include <game.h>
 #include <QTimer>
+#include <QGraphicsPixmapItem>
 
 Game::Game()
 {
     scene = new QGraphicsScene();
 
     player = new Player();
-    player->setRect(0,0,100,100);
-
     scene->addItem(player);
+
+  /*  QGraphicsPixmapItem *drum = new QGraphicsPixmapItem();
+    drum->setPixmap(QPixmap(":/images/testdrum2.png"));
+    drum->setPos(0,143);
+    scene->addItem(drum); */
+
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(800,600);
-    scene->setSceneRect(0,0,800,600);
-    player->setPos(width()/2,height() - player->rect().height());
+    setFixedSize(768,557);
+    scene->setSceneRect(0,0,768,557);
+    scene->setBackgroundBrush(QBrush(QPixmap(":/images/bgg6.png")));
+
+    //create the score
+    score = new Score();
+    scene->addItem(score);
 
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
-    timer->start(2000);
+    timer->start(1200);
+
+    time = new Mytimer();
+    scene->addItem(time);
 
     show();
 }
