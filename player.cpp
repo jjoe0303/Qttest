@@ -11,13 +11,13 @@ extern Game * game;
 
 Player::Player()
 {
-    setPixmap(QPixmap(":/images/drum3.png"));
+    setPixmap(QPixmap(":/image/drum3.png"));
     setPos(20,165);
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-  /*  if (event->key() == Qt::Key_Left){
+  /* if (event->key() == Qt::Key_Left){
         if(pos().x()>0){
         setPos(x()-30,y());
         }
@@ -36,12 +36,12 @@ void Player::keyPressEvent(QKeyEvent *event)
     else if (event->key() == Qt::Key_Down){
         setPos(x(),y()+10);
     }
-*/
-   /*  if (event->key() == Qt::Key_Space){
+
+     if (event->key() == Qt::Key_Space){
         Bullet * bullet = new Bullet();
         bullet->setPos(x(),y());
         scene()->addItem(bullet);
-    }*/
+    } */
 
      if (event->key() == Qt::Key_X || event->key() == Qt::Key_C){
          QList<QGraphicsItem *> colliding_Items = collidingItems();

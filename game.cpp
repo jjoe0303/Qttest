@@ -4,6 +4,7 @@
 
 Game::Game()
 {
+  //  start = new Start();
     scene = new QGraphicsScene();
 
     player = new Player();
@@ -12,7 +13,7 @@ Game::Game()
   /*  QGraphicsPixmapItem *drum = new QGraphicsPixmapItem();
     drum->setPixmap(QPixmap(":/images/testdrum2.png"));
     drum->setPos(0,143);
-    scene->addItem(drum); */
+    scene->addItem(drum);*/
 
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
@@ -21,8 +22,9 @@ Game::Game()
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(768,557);
+
     scene->setSceneRect(0,0,768,557);
-    scene->setBackgroundBrush(QBrush(QPixmap(":/images/bgg6.png")));
+    scene->setBackgroundBrush(QBrush(QPixmap(":/image/bgg6.png")));
 
     //create the score
     score = new Score();
@@ -32,8 +34,7 @@ Game::Game()
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
     timer->start(1200);
 
-    time = new Mytimer();
-    scene->addItem(time);
+    mytimer = new Mytimer();
+    scene->addItem(mytimer);
 
-    show();
 }

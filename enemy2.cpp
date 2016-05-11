@@ -9,7 +9,7 @@ Enemy2::Enemy2()
 {
    //set random position
     setPos(800,192);
-    setPixmap(QPixmap(":/images/red.png"));
+    setPixmap(QPixmap(":/image/red.png"));
     QTimer * timer = new QTimer();
     connect (timer,SIGNAL(timeout()),this,SLOT(move()));
     timer->start(100);

@@ -7,9 +7,8 @@
 
 Enemy::Enemy()
 {
-   //set random position
     setPos(800,192);
-    setPixmap(QPixmap(":/images/blue.png"));
+    setPixmap(QPixmap(":/image/blue.png"));
     QTimer * timer = new QTimer();
     connect (timer,SIGNAL(timeout()),this,SLOT(move()));
     timer->start(100);

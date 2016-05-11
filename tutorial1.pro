@@ -19,7 +19,8 @@ SOURCES += main.cpp \
     player.cpp \
     score.cpp \
     enemy2.cpp \
-    mytimer.cpp
+    mytimer.cpp \
+    mainwindow.cpp
 
 HEADERS  += \
     bullet.h \
@@ -28,9 +29,11 @@ HEADERS  += \
     player.h \
     score.h \
     enemy2.h \
-    mytimer.h
+    mytimer.h \
+    mainwindow.h
 
 RESOURCES += \
-    res.qrc
+    resource.qrc
 
-FORMS +=
+FORMS += \
+    mainwindow.ui

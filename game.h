@@ -10,12 +10,13 @@
 #include <mytimer.h>
 
 class Game:public QGraphicsView{
+    Q_OBJECT
 public:
     Game();
     QGraphicsScene * scene;
     Player * player;
     Score * score;
-    Mytimer * time;
+    Mytimer * mytimer;
 };
 
 #endif // GAME_H

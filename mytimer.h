@@ -9,9 +9,10 @@ class Mytimer:public QGraphicsTextItem{
 public:
     Mytimer(QGraphicsItem * parent = 0);
     int gettime();
+    int time;
 public slots:
     void decrease();
 private:
-    int time;
+ //   int time;
 };
 #endif // MYTIMER_H
